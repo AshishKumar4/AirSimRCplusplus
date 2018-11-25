@@ -4,7 +4,7 @@
 
 ## AirSimRC++ allows you to connect your random radio controller to a PC, via an **_intermediate Arduino_** (or stm8/32 or any other microcontroller really), and provide a useful set of APIs and tools to do stuff with the data, for example, connect to the AirSim Simulator of Unreal Engine 4, without **_EXPLICITLY coding for a new RX_**.
 
-### **For the Architecture, check the bottom note**
+### _For the Architecture, check the bottom note_
 
 ## **_Usage:_**
 > First upload the **_ArduinoInterface_** sketch onto an arduino board (or stm etc.). Tweak the serial speed as the max available on that board.
@@ -24,7 +24,7 @@
 > Procedures to calibrate the controller follows. First **_both joysticks to bottom_**, then **_top_**, then **_left_** then **_right_** then **_leave in middle_**. Then **_Wait for 5 seconds_** for the procedure to finish.
 
 
-###Following the steps, You should now be able to fly the MultiCopter using the controller, intuitively. Report any bugs/problems if found. 
+### Following the steps, You should now be able to fly the MultiCopter using the controller, intuitively. Report any bugs/problems if found. 
 
 ### **_The Architecture is as follows_**
 > The Radio Reciever is **connected to an Arduino**, with **provided Code uploaded on it**. The Radio Reciever sends data recieved from the transmitter via _PWM_ signals. Arduino then writes the data onto a _Serial_ port as stream to a PC attached. 
