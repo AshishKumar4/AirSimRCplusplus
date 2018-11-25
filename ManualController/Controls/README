@@ -1,0 +1,10 @@
+This Directory contains code to provide APIs for Lower Level REMOTE Control over the Drone's onboard System.
+Basically The code here is an alternative to the Onboard ControlAbstraction, provided simply
+to offload the board from control related calculations and computation.
+This Directory also provides APIs for Manual Physical Remote Control as well as abstraction to enable it to run over 
+the Microsoft AirSim Simulatior.
+
+DirectControl/      -->         Code and APIs for handling over commands to the remote drone computers
+
+AbstractControls    -->         Abstract classes to provide APIs for control and communicating to the drone
+DirectControls      -->         Implemntations of the Controller class for Actual Real Drone Controls

@@ -1,0 +1,13 @@
+This Directory contains code for the physical controlling of the drone via communicating to the flight controller.
+
+The code provides APIs for abstract access to the flight controller, as well as code to setup a server which listens for 
+external commands, which it can then redirect to the flight controller, basically acting as a middle layer.
+Such external command sources can be commands from the Higher level Control Abstraction which themselves operate under the
+commands from the Purpose layer, or a direct manual remote, which can command over wifi, or a remote Control Stack.
+
+SPIdrivers.cpp          -->         APIs to communicate over the SPI interface
+BasicControls.cpp       -->         APIs to command the flight controller to take actions 
+ControlServer.cpp       -->         Setup a control server and listen over a particular socket for commands
+
+OnBoard Control Systems can directly access the flight controller via BasicControls API while Remote Control Systems and Manual Systems 
+may access it over the ControlServer API.
