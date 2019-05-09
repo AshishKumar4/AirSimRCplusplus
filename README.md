@@ -1,10 +1,12 @@
 # Use any Radio Controller easily with AirSimRC++
-## This software stack allows you to integrate any Radio Controller hasle-free, to use with Unreal Engine 4 based AirSim Simulator as well as to provide extended APIs for general use.
-### Wanted to use your Radio Controller but its not supported by AirSim? or just wanted to get data from a Radio Controller to a PC for god knows what reason? Well this might just end your search.
 
-## AirSimRC++ allows you to connect your random radio controller to a PC, via an **_intermediate Arduino_** (or stm8/32 or any other microcontroller really), and provide a useful set of APIs and tools to do stuff with the data, for example, connect to the AirSim Simulator of Unreal Engine 4, without **_EXPLICITLY coding for a new RX_**.
+This software stack allows you to integrate any Radio Controller hasle-free, to use with Unreal Engine 4 based AirSim Simulator as well as to provide extended APIs for general use.
 
-### _For the Architecture, check the bottom note_
+Wanted to use your Radio Controller but its not supported by AirSim? or just wanted to get data from a Radio Controller to a PC for god knows what reason? Well this might just end your search.
+
+AirSimRC++ allows you to connect your random radio controller to a PC, via an **_intermediate Arduino_** (or stm8/32 or any other microcontroller really), and provide a useful set of APIs and tools to do stuff with the data, for example, connect to the AirSim Simulator of Unreal Engine 4, without **_EXPLICITLY coding for a new RX_**.
+
+## _For the Architecture, check the bottom note_
 
 ## **_Usage:_**
 > First upload the **_ArduinoInterface_** sketch onto an arduino board (or stm etc.). Tweak the serial speed as the max available on that board.
@@ -36,4 +38,3 @@
 One might wonder why so much trouble setting up local servers and passing data via sockets. well, This code is a part of a greater project, where I needed to control a Real Drone, via a PC itself. This ManualController was developed to just test all the protocols and APIs involved. And to test the offboard side of things, I created a simple 'Drone Emulating' server, which mimicked the Drone's APIs that I had developed, but instead of commanding a real drone, commanded a virtual one in Unreal Engine itself. I thought this can be useful for someone as a standalone system itself, thus this. 
 The overhead of data transfers isn't significant as compared to the main bottleneck, which is the Receiver to Arduino communication, which can't be optimized.
 Still, Suggestions, Bug alerts and possible fixes as well as any optimization you well are welcomed, Do open a pull request.
-

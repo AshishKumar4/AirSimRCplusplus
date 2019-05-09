@@ -39,11 +39,11 @@ class RunningAverage
     double alpha;
 
   public:
-    RunningAverage(int blength, int seed, double alph)
+    RunningAverage(int blength, int seed, double alpha)
     {
         for (int j = 0; j < blength; j++)
             avgBuffs.push_back(seed);
-        alpha = alph;
+        alpha = alpha;
         buffLength = blength;
     }
 
@@ -55,9 +55,9 @@ class RunningAverage
         return y;
     }
 
-    void Reset(double alph)
+    void Reset(double alpha)
     {
-        alpha = alph;
+        alpha = alpha;
     }
 };
 
