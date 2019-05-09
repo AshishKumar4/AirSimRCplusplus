@@ -67,7 +67,7 @@ int main()
         case 0:
             exit(0);
         default:
-            cout << "Incorrect Option choosen!\n";
+            cout << "Incorrect Option chosen!\n";
         }
     }
     return 0;

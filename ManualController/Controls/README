@@ -7,4 +7,4 @@ the Microsoft AirSim Simulatior.
 DirectControl/      -->         Code and APIs for handling over commands to the remote drone computers
 
 AbstractControls    -->         Abstract classes to provide APIs for control and communicating to the drone
-DirectControls      -->         Implemntations of the Controller class for Actual Real Drone Controls
+DirectControls      -->         Implementations of the Controller class for Actual Real Drone Controls

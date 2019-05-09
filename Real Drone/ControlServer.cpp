@@ -72,7 +72,7 @@ class ControlServer
         CreateChannel(portBase + 5, 5);     //  Aux2 is             5*/
         // We Create six channels, each corresponding to six basic controls of drone
 
-        // We would then create serveral threads, which would in turn listen to sockets
+        // We would then create several threads, which would in turn listen to sockets
         LaunchListenerThreads();
     }
     ~ControlServer()

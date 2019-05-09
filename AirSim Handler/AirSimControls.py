@@ -94,7 +94,7 @@ class AirSimControls:
             # Handshake Message ->  IN: "Hello Gardien!"
             buff = c.recv(1024).decode("utf-8")
             if buff == "Hello Gardien!":
-                print("Connection to overlord successfull!")
+                print("Connection to overlord successful!")
                 c.send(b"Hello Overloard!")  # Handshake
             else:
                 print("Connection Failed!, Got Back this handshake -->")
@@ -115,14 +115,14 @@ class AirSimControls:
                     bb = bytes(a[tmp.rfind(b".") :], "utf-8")  # Get the index of the last dot and store it for future
                     b = str(a).split(".")
                 except Exception as e:
-                    print("Error in Recieving and parsing...")
+                    print("Error in Receiving and parsing...")
                     del self.connections[id]
                     del c
                     break
                 print(b)
                 for i in b:  # For multiple logged commands
                     cmd = i.split(":")
-                    if len(cmd) == 3:  # We recieved the command properly
+                    if len(cmd) == 3:  # We received the command properly
                         # print("Got Request nicely...")
                         val = float(int(cmd[1]))
                         print("Got Request "+ self.channelTable[id]["name"] + " :"+ str(val))

@@ -99,7 +99,7 @@ ISR(SPI_STC_vect)
   {
     Serial.println("Got...");
     //buff[0] = g;
-    SPDR = ACCEPT_SIGNAL;  // Recieved Signal
+    SPDR = ACCEPT_SIGNAL;  // Received Signal
     index = 0;
     process = false;
   }
