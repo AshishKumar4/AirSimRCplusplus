@@ -35,7 +35,7 @@ void DirectController::InitSequence()
   for (int i = 0; i < 6; i++)
   {
     send(server_fd[i], HANDSHAKE_IN_MSG, strlen(HANDSHAKE_IN_MSG), 0);
-    // TODO: Place mechanism to recieve back handshake and if not matching, Panic!
+    // TODO: Place mechanism to receive back handshake and if not matching, Panic!
     char *buff = (char *)malloc(1024);
     int valread = read(server_fd[i], buff, 1024);
     if (strncmp(buff, HANDSHAKE_OUT_MSG, strlen(HANDSHAKE_OUT_MSG)))
@@ -43,7 +43,7 @@ void DirectController::InitSequence()
       std::cout << "Gardien Could not establish Connection / Handshake Failure...\n";
       throw "Handshake Failed!";
     }
-    printf("Handshake Successfull, Connection Established!\n");
+    printf("Handshake Successful, Connection Established!\n");
   }
   disarm();
   balance();

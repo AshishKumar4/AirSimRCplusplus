@@ -17,7 +17,7 @@
 
 > Open a terminal in the **_ManualController_** Directory and type **_make_** to compile and generate binaries.
 
-> **_Switch on the Radio controller_** and make sure it is binded to the reciever.
+> **_Switch on the Radio controller_** and make sure it is binded to the receiver.
 
 > **_Execute the ManualController_** Binary. 
 
@@ -27,13 +27,13 @@
 ### Following the steps, You should now be able to fly the MultiCopter using the controller, intuitively. Report any bugs/problems if found. 
 
 ### **_The Architecture is as follows_**
-> The Radio Reciever is **connected to an Arduino**, with **provided Code uploaded on it**. The Radio Reciever sends data recieved from the transmitter via _PWM_ signals. Arduino then writes the data onto a _Serial_ port as stream to a PC attached. 
+> The Radio Receiver is **connected to an Arduino**, with **provided Code uploaded on it**. The Radio Receiver sends data received from the transmitter via _PWM_ signals. Arduino then writes the data onto a _Serial_ port as stream to a PC attached. 
 
 > The **_ManualController_** Program reads from this Serial port, unpacks the data, calibrates it when needed, and applies some signal processing to sanitize and smoothen it, and converts it into a range of _0-255_. **_ManualController_** program then connects to a local server, created by the **_AirSimControls.py_** and begins sending RX data over via sockets.
 
 > The **_AirSimControls.py_** is a Python 3 script that connects to the AirSim module running along Unreal Engine 4, sets up a local server, listens for RX data from **_ManualController_**, and then calls AirSim's internal APIs to forward the commands and thus control the virtual drone as if real.
 
 One might wonder why so much trouble setting up local servers and passing data via sockets. well, This code is a part of a greater project, where I needed to control a Real Drone, via a PC itself. This ManualController was developed to just test all the protocols and APIs involved. And to test the offboard side of things, I created a simple 'Drone Emulating' server, which mimicked the Drone's APIs that I had developed, but instead of commanding a real drone, commanded a virtual one in Unreal Engine itself. I thought this can be useful for someone as a standalone system itself, thus this. 
-The overhead of data transfers isn't significant as compared to the main bottleneck, which is the Reciever to Arduino communication, which can't be optimized.
+The overhead of data transfers isn't significant as compared to the main bottleneck, which is the Receiver to Arduino communication, which can't be optimized.
 Still, Suggestions, Bug alerts and possible fixes as well as any optimization you well are welcomed, Do open a pull request.
 

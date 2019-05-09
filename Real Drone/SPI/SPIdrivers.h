@@ -4,7 +4,7 @@
 #define SPI_SPEED 1000000
 
 /*
-    SPI Drivers, to send and recieve data packets over SPI
+    SPI Drivers, to send and receive data packets over SPI
 */
 
 int SPI_init(char* file);
